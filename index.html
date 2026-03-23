@@ -3,1454 +3,1069 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prof. Satyadhyan Chickerur | KLE Technological University</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Prof. Satyadhyan Chickerur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║          HOW TO ADD YOUR PHOTOS — READ FIRST                    ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║  STEP 1 — Upload your photo to Google Drive                      ║
+║  STEP 2 — Right-click the file → "Share"                        ║
+║           → "Anyone with the link" → Copy link                   ║
+║                                                                  ║
+║  Your share link looks like:                                     ║
+║  https://drive.google.com/file/d/FILEID/view?usp=sharing        ║
+║                                                                  ║
+║  STEP 3 — Convert it to a direct image URL:                      ║
+║  Change it to:                                                   ║
+║  https://drive.google.com/uc?export=view&id=FILEID              ║
+║  (just copy the FILEID part from your link)                      ║
+║                                                                  ║
+║  STEP 4 — Find the photo slot below (labelled with comments)    ║
+║           Paste your URL into src="" replacing ADD_URL_HERE      ║
+║                                                                  ║
+║  PHOTO SLOTS IN THIS FILE:                                       ║
+║  1.  Jensen Huang selfie (GTC 2018)                              ║
+║  2.  GTC Convention Center                                       ║
+║  3.  GTC extra moment                                            ║
+║  4.  OpenACC Shanghai — Team Linkers session                     ║
+║  5.  OpenACC Shanghai — Workshop                                 ║
+║  6.  OpenACC Shanghai — SJTU campus                             ║
+║  7.  NSM Hackathon IIT Bombay 2022 (a)                          ║
+║  8.  NSM Hackathon IIT Bombay 2022 (b)                          ║
+║  9.  NSM Hackathon IISc Bangalore 2023 (a)                      ║
+║  10. NSM Hackathon IISc Bangalore 2023 (b)                      ║
+║  11. ACM IIT Palakkad — Talk                                     ║
+║  12. ACM IIT Palakkad — Workshop                                 ║
+║  13. ACM IIT Palakkad — Group photo                             ║
+║  14. HAL Bengaluru talk 2025                                     ║
+║  15. DevFest GDG Hubli 2023                                      ║
+║  16. IWD GDG Hubli 2023                                          ║
+║  17. Quantum ML Workshop DSU (a)                                 ║
+║  18. Quantum ML Workshop DSU (b)                                 ║
+║  19. UK — Oxford                                                 ║
+║  20. UK — Cambridge                                              ║
+║  21. UK — UCL                                                    ║
+║  22. UK — University of East Anglia                             ║
+║  23. UK — Imperial College London                               ║
+║  24. UK — Other UK institution                                   ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+
 <style>
-  /* ── DESIGN SYSTEM ─────────────────────────────────────────── */
-  /* Palette: "Warm Scholar" — deep moss + warm cream + terracotta accent */
-  /* Trending 2025: Earthy biophilic tones, quiet luxury, editorial type */
-  :root {
-    --moss:       #2D4A3E;   /* deep moss green — primary */
-    --moss-mid:   #3D6355;   /* medium moss — hover states */
-    --moss-light: #5C8A76;   /* light moss — subtle accents */
-    --cream:      #F5F0E8;   /* warm cream — main bg */
-    --cream-dark: #EDE5D8;   /* deeper cream — section bg */
-    --terra:      #C17B4E;   /* terracotta — warm accent */
-    --terra-light:#D4956A;   /* lighter terracotta */
-    --gold:       #B8965A;   /* warm gold — highlight */
-    --charcoal:   #1C2B22;   /* very dark green-black — text */
-    --mid-grey:   #6B7B73;   /* mid tone — body text */
-    --light-grey: #A8B5AE;   /* light tone — captions */
-    --white:      #FFFFFF;
-    --card-bg:    rgba(255,255,255,0.72);
-    --shadow-sm:  0 2px 12px rgba(44,74,62,0.08);
-    --shadow-md:  0 8px 32px rgba(44,74,62,0.12);
-    --shadow-lg:  0 20px 60px rgba(44,74,62,0.15);
-    --radius:     12px;
-    --radius-lg:  20px;
-    --transition: 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-  }
+/* ─── DESIGN TOKENS ─── */
+:root {
+  --cream:      #FDF6ED;
+  --cream2:     #F5ECD7;
+  --cream3:     #EDE0C8;
+  --parchment:  #E8D9BC;
+  --dark:       #1E1A14;
+  --dark2:      #2C2518;
+  --dark3:      #3D3325;
+  --rose:       #C9897A;
+  --rose-lt:    #EDD5CF;
+  --rose-bg:    #F9EDEA;
+  --sage:       #7A9E88;
+  --sage-lt:    #C4D9CB;
+  --sage-bg:    #EBF2EE;
+  --tan:        #C4965A;
+  --tan-lt:     #E8CFA0;
+  --tan-bg:     #F7EEDD;
+  --slate:      #7D8FA3;
+  --slate-lt:   #C8D4DF;
+  --slate-bg:   #EAF0F5;
+  --mauve:      #9E7EA8;
+  --mauve-lt:   #D9CADF;
+  --mauve-bg:   #F2EDF5;
+  --text:       #2C2518;
+  --text2:      #5A4E3C;
+  --text3:      #8A7A66;
+  --white:      #FFFFFF;
+  --sh1: 0 2px 16px rgba(30,26,20,0.07);
+  --sh2: 0 6px 32px rgba(30,26,20,0.12);
+  --sh3: 0 16px 56px rgba(30,26,20,0.16);
+  --r: 10px;
+}
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  font-size: 16px;
+}
 
-  html { scroll-behavior: smooth; font-size: 16px; }
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--dark);
+  background-image:
+    radial-gradient(ellipse at 70% 0%,  rgba(196,150,90,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 95%, rgba(122,158,136,0.14) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(201,137,122,0.10) 0%, transparent 40%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 100px 24px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content:''; position:absolute; inset:0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.hero-corner { position:absolute; width:80px; height:80px; pointer-events:none; }
+.hero-corner.tl { top:32px; left:32px; border-top:1.5px solid rgba(196,150,90,0.3); border-left:1.5px solid rgba(196,150,90,0.3); }
+.hero-corner.tr { top:32px; right:32px; border-top:1.5px solid rgba(196,150,90,0.3); border-right:1.5px solid rgba(196,150,90,0.3); }
+.hero-corner.bl { bottom:60px; left:32px; border-bottom:1.5px solid rgba(196,150,90,0.3); border-left:1.5px solid rgba(196,150,90,0.3); }
+.hero-corner.br { bottom:60px; right:32px; border-bottom:1.5px solid rgba(196,150,90,0.3); border-right:1.5px solid rgba(196,150,90,0.3); }
+.hero-inner {
+  position:relative; z-index:1;
+  max-width:820px; width:100%;
+  display:flex; flex-direction:column; align-items:center;
+  animation: riseIn 1s cubic-bezier(.22,.68,0,1.2) both;
+}
+.hero-eyebrow { display:flex; align-items:center; gap:16px; margin-bottom:28px; }
+.hero-eyebrow-line { flex:1; height:1px; width:60px; background:rgba(196,150,90,0.4); }
+.hero-eyebrow-text { font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--tan-lt); }
+.hero-name { font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(3rem,8vw,5.2rem); font-weight:600; color:var(--cream); text-align:center; line-height:1.05; letter-spacing:-0.01em; }
+.hero-name .accent { color:var(--tan-lt); font-style:italic; }
+.hero-rule { width:48px; height:2px; background:linear-gradient(to right,var(--tan),var(--rose)); margin:22px 0 20px; border-radius:2px; }
+.hero-role { font-size:1.05rem; font-weight:300; color:rgba(253,246,237,0.65); text-align:center; letter-spacing:0.03em; line-height:1.6; }
+.hero-org { margin-top:10px; font-size:1rem; font-weight:500; color:var(--tan-lt); text-align:center; }
+.hero-pills { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:30px; }
+.pill { border:1px solid rgba(196,150,90,0.28); color:rgba(253,246,237,0.78); font-size:0.8rem; font-weight:400; padding:5px 16px; border-radius:20px; letter-spacing:0.02em; }
+.hero-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:36px; }
+.h-btn { display:inline-flex; align-items:center; gap:8px; font-size:0.88rem; font-weight:500; padding:11px 24px; border-radius:6px; text-decoration:none; transition:all 0.22s; }
+.h-btn-solid { background:var(--tan-lt); color:var(--dark2); }
+.h-btn-solid:hover { background:var(--cream); }
+.h-btn-ghost { border:1px solid rgba(196,150,90,0.3); color:rgba(253,246,237,0.8); }
+.h-btn-ghost:hover { border-color:var(--tan-lt); color:var(--cream); }
+.scroll-down { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(196,150,90,0.4); font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; animation:floatDown 2.4s ease-in-out infinite; }
+.scroll-down::after { content:''; width:1px; height:40px; background:linear-gradient(to bottom,rgba(196,150,90,0.5),transparent); }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--charcoal);
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+/* ── SECTIONS ── */
+section { padding:80px 24px; }
+.wrap { max-width:940px; margin:0 auto; }
+.sec-eyebrow { font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.sec-eyebrow::after { content:''; flex:1; height:1px; background:currentColor; opacity:0.2; }
+.sec-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:600; line-height:1.2; margin-bottom:36px; }
 
-  /* ── NAV ──────────────────────────────────────────────────── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(245,240,232,0.88);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(44,74,62,0.1);
-    padding: 0 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    transition: var(--transition);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--moss);
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2.2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--mid-grey);
-    text-decoration: none;
-    transition: color var(--transition);
-    position: relative;
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -3px; left: 0;
-    width: 0; height: 1.5px;
-    background: var(--terra);
-    transition: width var(--transition);
-  }
-  .nav-links a:hover { color: var(--moss); }
-  .nav-links a:hover::after { width: 100%; }
+/* ── PHOTO FRAME SYSTEM ── */
+.photo-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.photo-card:hover .photo-frame img { transform: scale(1.04); }
+.photo-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; padding: 16px;
+  background: linear-gradient(135deg, rgba(196,150,90,0.08), rgba(122,158,136,0.06));
+}
+.ph-icon { font-size: 1.8rem; opacity: 0.45; }
+.ph-label { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(196,150,90,0.6); text-align:center; line-height:1.5; }
+.ph-hint { font-size:0.6rem; color:rgba(196,150,90,0.4); text-align:center; font-family:'DM Mono',monospace; margin-top:2px; }
 
-  /* ── HERO ─────────────────────────────────────────────────── */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--moss);
-    position: relative;
-    overflow: hidden;
-  }
-  /* Organic texture overlay */
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(193,123,78,0.12) 0%, transparent 70%),
-      radial-gradient(ellipse 50% 80% at 20% 80%, rgba(255,255,255,0.04) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  /* Decorative grid lines */
-  .hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
+/* ── UK PHOTO FRAME ── */
+.uk-frame {
+  position: relative;
+  width: 100%; aspect-ratio:16/10;
+  overflow: hidden;
+  border-bottom: 1.5px solid var(--sage-lt);
+}
+.uk-frame img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.35s; }
+.uk-card:hover .uk-frame img { transform: scale(1.04); }
+.uk-frame .photo-placeholder { background: linear-gradient(135deg, var(--sage-bg), var(--cream2)); }
 
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 8rem 4rem 6rem 6rem;
-    position: relative;
-    z-index: 2;
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(193,123,78,0.18);
-    border: 1px solid rgba(193,123,78,0.35);
-    color: var(--terra-light);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.45rem 1rem;
-    border-radius: 100px;
-    margin-bottom: 2rem;
-    width: fit-content;
-  }
-  .hero-badge span { width: 6px; height: 6px; background: var(--terra-light); border-radius: 50%; }
-  .hero-role {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--moss-light);
-    margin-bottom: 1.2rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  .hero-role::before {
-    content: '';
-    display: block;
-    width: 32px; height: 1px;
-    background: var(--moss-light);
-  }
-  .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 5vw, 5.5rem);
-    font-weight: 300;
-    color: var(--cream);
-    line-height: 1.05;
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.01em;
-  }
-  .hero-name em {
-    font-style: italic;
-    color: var(--terra-light);
-    font-weight: 400;
-  }
-  .hero-surname {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 6vw, 6.5rem);
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1.0;
-    margin-bottom: 2rem;
-    letter-spacing: -0.02em;
-  }
-  .hero-divider {
-    width: 48px; height: 2px;
-    background: linear-gradient(90deg, var(--terra), transparent);
-    margin-bottom: 1.8rem;
-  }
-  .hero-desc {
-    font-size: 0.95rem;
-    color: rgba(245,240,232,0.65);
-    line-height: 1.75;
-    max-width: 440px;
-    margin-bottom: 2.5rem;
-  }
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 3rem;
-  }
-  .hero-tag {
-    font-size: 0.73rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    color: rgba(245,240,232,0.7);
-    border: 1px solid rgba(245,240,232,0.2);
-    padding: 0.35rem 0.85rem;
-    border-radius: 100px;
-    font-family: 'DM Mono', monospace;
-  }
-  .hero-cta {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  .btn-primary {
-    background: var(--terra);
-    color: white;
-    padding: 0.85rem 2rem;
-    border-radius: 100px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-decoration: none;
-    transition: var(--transition);
-    box-shadow: 0 4px 20px rgba(193,123,78,0.35);
-  }
-  .btn-primary:hover { background: var(--terra-light); transform: translateY(-2px); }
-  .btn-ghost {
-    color: rgba(245,240,232,0.7);
-    font-size: 0.82rem;
-    font-weight: 500;
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color var(--transition);
-  }
-  .btn-ghost:hover { color: var(--cream); }
-  .btn-ghost::after { content: '→'; }
+/* ── ABOUT ── */
+#about { background:var(--white); }
+#about .sec-eyebrow { color:var(--tan); }
+#about .sec-title { color:var(--dark); }
+.about-layout { display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:start; }
+@media(max-width:660px){ .about-layout { grid-template-columns:1fr; gap:28px; } }
+.about-text { font-size:1.05rem; color:var(--text2); line-height:1.85; }
+.about-text p+p { margin-top:15px; }
+.about-text a { color:var(--tan); font-weight:500; text-underline-offset:3px; }
+.about-text strong { color:var(--dark); font-weight:600; }
+.aff-panel { background:var(--tan-bg); border:1.5px solid var(--tan-lt); border-radius:var(--r); padding:28px; }
+.aff-panel h3 { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; color:var(--dark); margin-bottom:16px; }
+.aff-row { display:flex; align-items:flex-start; gap:10px; padding:8px 0; border-bottom:1px solid var(--parchment); font-size:0.92rem; color:var(--text2); line-height:1.5; }
+.aff-row:last-child { border-bottom:none; }
+.aff-dot { width:6px; height:6px; background:var(--tan); border-radius:50%; margin-top:7px; flex-shrink:0; }
 
-  .hero-visual {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    padding: 8rem 5rem 6rem 2rem;
-  }
-  .hero-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: var(--radius-lg);
-    padding: 3rem 2.5rem;
-    width: 100%;
-    max-width: 360px;
-    backdrop-filter: blur(8px);
-    position: relative;
-  }
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 2rem; right: 2rem;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--terra), transparent);
-  }
-  .stat-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .stat-item { text-align: center; }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 600;
-    color: var(--cream);
-    line-height: 1;
-    display: block;
-  }
-  .stat-label {
-    font-size: 0.71rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--moss-light);
-    margin-top: 0.3rem;
-  }
-  .stat-divider {
-    width: 1px;
-    background: rgba(255,255,255,0.1);
-    margin: 0 auto;
-  }
-  .social-links {
-    display: flex;
-    gap: 0.8rem;
-    justify-content: center;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .social-btn {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.14);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: rgba(245,240,232,0.7);
-    font-size: 0.78rem;
-    font-weight: 600;
-    transition: var(--transition);
-    letter-spacing: 0;
-  }
-  .social-btn:hover {
-    background: rgba(193,123,78,0.25);
-    border-color: var(--terra);
-    color: var(--terra-light);
-    transform: translateY(-2px);
-  }
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: rgba(245,240,232,0.4);
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    animation: bounce 2.5s ease-in-out infinite;
-  }
-  .scroll-indicator::before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(245,240,232,0.4), transparent);
-  }
-  @keyframes bounce {
-    0%,100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
+/* ── STARTUP ── */
+#startup { background:var(--cream); }
+#startup .sec-eyebrow { color:var(--sage); }
+#startup .sec-title { color:var(--dark); }
+.startup-wrap { background:var(--dark); border-radius:var(--r); overflow:hidden; box-shadow:var(--sh3); }
+.startup-top { background:linear-gradient(130deg,#2C2518 0%,#3D3325 50%,#2A2D1F 100%); padding:38px 42px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; border-bottom:1px solid rgba(196,150,90,0.2); }
+.startup-monogram { background:rgba(196,150,90,0.15); border:1.5px solid rgba(196,150,90,0.35); border-radius:8px; padding:14px 20px; font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:700; color:var(--tan-lt); line-height:1.1; text-align:center; min-width:80px; }
+.startup-monogram span { display:block; font-size:0.65em; font-style:italic; color:rgba(232,208,160,0.7); }
+.startup-hdr { flex:1; }
+.startup-name { font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:600; color:var(--cream); margin-bottom:4px; }
+.startup-tag { font-size:0.93rem; color:rgba(253,246,237,0.6); }
+.startup-body { padding:38px 42px; }
+@media(max-width:580px){ .startup-top,.startup-body { padding:24px 22px; } }
+.startup-chips { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:28px; }
+.s-chip { display:flex; align-items:center; gap:8px; background:rgba(196,150,90,0.12); border:1px solid rgba(196,150,90,0.25); border-radius:6px; padding:10px 16px; font-size:0.88rem; font-weight:500; color:var(--tan-lt); }
+.startup-desc { font-size:1rem; color:rgba(253,246,237,0.68); line-height:1.8; margin-bottom:28px; }
+.startup-link { display:inline-flex; align-items:center; gap:10px; background:var(--tan-lt); color:var(--dark2); font-weight:600; font-size:0.95rem; padding:13px 28px; border-radius:6px; text-decoration:none; transition:background 0.22s; }
+.startup-link:hover { background:var(--cream); }
 
-  /* ── SECTION SHARED ───────────────────────────────────────── */
-  section { padding: 7rem 0; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
-  .section-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--terra);
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 24px; height: 1.5px;
-    background: var(--terra);
-    flex-shrink: 0;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 400;
-    color: var(--charcoal);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .section-title em {
-    font-style: italic;
-    color: var(--moss);
-  }
-  .section-subtitle {
-    font-size: 1rem;
-    color: var(--mid-grey);
-    max-width: 520px;
-    line-height: 1.75;
-  }
+/* ── NEWS ── */
+#news { background:var(--cream2); }
+#news .sec-eyebrow { color:var(--rose); }
+#news .sec-title { color:var(--dark); }
+.news-rows { display:flex; flex-direction:column; }
+.news-row { display:grid; grid-template-columns:110px 1fr; gap:0 24px; padding:18px 0; border-bottom:1px solid var(--cream3); }
+.news-row:first-child { border-top:1px solid var(--cream3); }
+@media(max-width:460px){ .news-row { grid-template-columns:1fr; gap:4px; } }
+.n-date { font-family:'DM Mono',monospace; font-size:0.68rem; color:var(--rose); padding-top:4px; }
+.n-text { font-size:0.98rem; color:var(--text2); line-height:1.65; }
+.n-text a { color:var(--dark); font-weight:500; text-underline-offset:3px; text-decoration-color:var(--tan); }
+.n-text a:hover { color:var(--tan); }
 
-  /* ── ABOUT SECTION ────────────────────────────────────────── */
-  .about { background: var(--cream); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 4rem;
-  }
-  .about-text p {
-    font-size: 1.05rem;
-    color: var(--mid-grey);
-    line-height: 1.85;
-    margin-bottom: 1.5rem;
-  }
-  .about-text p:first-child {
-    font-size: 1.15rem;
-    color: var(--charcoal);
-    font-weight: 400;
-  }
-  .about-highlights {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .highlight-card {
-    background: var(--white);
-    border: 1px solid var(--cream-dark);
-    border-radius: var(--radius);
-    padding: 1.5rem 1.8rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    cursor: default;
-  }
-  .highlight-card:hover {
-    transform: translateX(6px);
-    border-color: var(--moss-light);
-    box-shadow: var(--shadow-md);
-  }
-  .highlight-icon {
-    width: 42px; height: 42px;
-    background: linear-gradient(135deg, var(--moss), var(--moss-mid));
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 1.1rem;
-  }
-  .highlight-content h4 {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: 0.2rem;
-    letter-spacing: 0.01em;
-  }
-  .highlight-content p {
-    font-size: 0.82rem;
-    color: var(--mid-grey);
-    line-height: 1.55;
-    margin: 0;
-  }
+/* ── GALLERY ── */
+#gallery { background:var(--dark2); }
+.gallery-intro { font-size:1rem; color:rgba(253,246,237,0.55); max-width:580px; line-height:1.75; margin-bottom:44px; }
+.g-category { margin-bottom:52px; }
+.g-category:last-child { margin-bottom:0; }
+.g-cat-label { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+.g-cat-icon { font-size:1.2rem; }
+.g-cat-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--tan-lt); }
+.g-cat-line { flex:1; height:1px; background:rgba(196,150,90,0.2); }
+.g-grid-2  { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.g-grid-3  { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; }
+.g-grid-4  { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.g-grid-hero { display:grid; grid-template-columns:1.6fr 1fr; gap:12px; }
+@media(max-width:700px){ .g-grid-3,.g-grid-4,.g-grid-hero { grid-template-columns:1fr 1fr; } }
+@media(max-width:480px){ .g-grid-2,.g-grid-3,.g-grid-4,.g-grid-hero { grid-template-columns:1fr; } }
+.photo-card { border-radius:8px; overflow:hidden; background:rgba(255,255,255,0.04); border:1px solid rgba(196,150,90,0.15); display:flex; flex-direction:column; transition:transform 0.22s, box-shadow 0.22s; }
+.photo-card:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(0,0,0,0.35); }
+.photo-card .photo-frame { aspect-ratio:4/3; }
+.photo-card.tall .photo-frame { aspect-ratio:3/4; }
+.photo-card.wide .photo-frame { aspect-ratio:16/9; }
+.photo-card.sq   .photo-frame { aspect-ratio:1/1; }
+.photo-meta { padding:12px 14px; border-top:1px solid rgba(196,150,90,0.12); }
+.photo-title { font-size:0.88rem; font-weight:500; color:var(--cream2); line-height:1.4; }
+.photo-sub { font-family:'DM Mono',monospace; font-size:0.62rem; color:rgba(196,150,90,0.7); margin-top:3px; letter-spacing:0.06em; }
 
-  /* ── NEWS TICKER ──────────────────────────────────────────── */
-  .news-bar {
-    background: var(--moss);
-    padding: 0;
-    overflow: hidden;
-  }
-  .news-bar-inner {
-    display: flex;
-    align-items: center;
-  }
-  .news-label {
-    background: var(--terra);
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.85rem 1.5rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-    font-family: 'DM Mono', monospace;
-  }
-  .news-scroll-wrapper {
-    overflow: hidden;
-    flex: 1;
-  }
-  .news-scroll {
-    display: flex;
-    gap: 3rem;
-    animation: scrollLeft 40s linear infinite;
-    white-space: nowrap;
-    padding: 0.85rem 2rem;
-  }
-  .news-item {
-    font-size: 0.82rem;
-    color: rgba(245,240,232,0.75);
-    flex-shrink: 0;
-  }
-  .news-item a {
-    color: var(--terra-light);
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .news-item a:hover { color: var(--cream); }
-  @keyframes scrollLeft {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+/* ── UK ── */
+#uk { background:var(--sage-bg); }
+#uk .sec-eyebrow { color:var(--sage); }
+#uk .sec-title { color:var(--dark); }
+.uk-intro { font-size:1rem; color:var(--text3); max-width:560px; line-height:1.75; margin-bottom:40px; }
+.uk-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:18px; }
+.uk-card { background:var(--white); border:1.5px solid var(--sage-lt); border-radius:var(--r); overflow:hidden; box-shadow:var(--sh1); transition:transform 0.22s, box-shadow 0.22s; }
+.uk-card:hover { transform:translateY(-4px); box-shadow:var(--sh2); }
+.uk-body { padding:16px 18px; }
+.uk-name { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:600; color:var(--dark); margin-bottom:4px; }
+.uk-desc { font-size:0.85rem; color:var(--text3); line-height:1.5; }
 
-  /* ── RESEARCH SECTION ─────────────────────────────────────── */
-  .research { background: var(--cream-dark); }
-  .research-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3.5rem;
-  }
-  .research-card {
-    background: var(--white);
-    border-radius: var(--radius-lg);
-    padding: 2.2rem;
-    border: 1px solid rgba(44,74,62,0.08);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-  }
-  .research-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--moss), var(--moss-light));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--transition);
-  }
-  .research-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-  .research-card:hover::before { transform: scaleX(1); }
-  .research-card-icon {
-    font-size: 2rem;
-    margin-bottom: 1.2rem;
-    display: block;
-  }
-  .research-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
-  }
-  .research-card p {
-    font-size: 0.88rem;
-    color: var(--mid-grey);
-    line-height: 1.7;
-  }
-  .research-card .tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 1.2rem;
-  }
-  .tag {
-    font-size: 0.68rem;
-    font-weight: 500;
-    font-family: 'DM Mono', monospace;
-    background: var(--cream);
-    color: var(--moss-mid);
-    border: 1px solid var(--cream-dark);
-    padding: 0.25rem 0.65rem;
-    border-radius: 100px;
-    letter-spacing: 0.04em;
-  }
+/* ── TALKS ── */
+#talks { background:var(--cream); }
+#talks .sec-eyebrow { color:var(--slate); }
+#talks .sec-title { color:var(--dark); }
+.talks-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px; }
+.t-card { background:var(--white); border:1.5px solid var(--slate-lt); border-radius:var(--r); padding:20px; transition:box-shadow 0.22s; }
+.t-card:hover { box-shadow:var(--sh1); }
+.t-badge { display:inline-block; background:var(--slate-bg); color:var(--slate); border:1px solid var(--slate-lt); font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase; padding:3px 10px; border-radius:12px; margin-bottom:10px; }
+.t-title { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; color:var(--dark); line-height:1.4; margin-bottom:4px; }
+.t-venue { font-size:0.84rem; color:var(--text3); }
 
-  /* ── PROJECTS SECTION ─────────────────────────────────────── */
-  .projects { background: var(--cream); }
-  .projects-list {
-    margin-top: 3.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .project-item {
-    background: var(--white);
-    border: 1px solid rgba(44,74,62,0.08);
-    border-radius: var(--radius);
-    padding: 1.8rem 2.2rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 1.5rem;
-    align-items: center;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-  }
-  .project-item:hover {
-    border-color: var(--moss-light);
-    box-shadow: var(--shadow-md);
-    transform: translateX(4px);
-  }
-  .project-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.6rem; }
-  .project-role {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--white);
-    background: var(--moss);
-    padding: 0.2rem 0.65rem;
-    border-radius: 100px;
-    font-family: 'DM Mono', monospace;
-  }
-  .project-role.co { background: var(--moss-light); }
-  .project-item h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--charcoal);
-    line-height: 1.4;
-  }
-  .project-meta {
-    font-size: 0.82rem;
-    color: var(--mid-grey);
-    margin-top: 0.3rem;
-    display: flex;
-    gap: 1.5rem;
-  }
-  .project-meta span::before { content: '· '; }
-  .project-meta span:first-child::before { content: ''; }
-  .project-amount {
-    text-align: right;
-    white-space: nowrap;
-  }
-  .project-amount .amt {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--moss);
-    display: block;
-    line-height: 1;
-  }
-  .project-amount .agency {
-    font-size: 0.72rem;
-    color: var(--light-grey);
-    margin-top: 0.3rem;
-    font-family: 'DM Mono', monospace;
-  }
+/* ── PUBLICATIONS ── */
+#pubs { background:var(--cream2); }
+#pubs .sec-eyebrow { color:var(--mauve); }
+#pubs .sec-title { color:var(--dark); }
+.pub-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:560px){ .pub-grid { grid-template-columns:1fr; } }
+.pub-card { background:var(--white); border:1.5px solid var(--mauve-lt); border-radius:var(--r); overflow:hidden; text-decoration:none; display:flex; flex-direction:column; box-shadow:var(--sh1); transition:transform 0.22s, box-shadow 0.22s; }
+.pub-card:hover { transform:translateY(-3px); box-shadow:var(--sh2); }
+.pub-top { background:var(--mauve-bg); padding:16px 22px; border-bottom:1.5px solid var(--mauve-lt); display:flex; align-items:center; gap:12px; }
+.pub-icon { font-size:1.4rem; }
+.pub-type { font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--mauve); }
+.pub-body { padding:18px 22px; flex:1; }
+.pub-name { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; color:var(--dark); line-height:1.4; margin-bottom:4px; }
+.pub-sub { font-size:0.84rem; color:var(--text3); }
+.pub-foot { padding:10px 22px; color:var(--mauve); font-size:0.82rem; font-weight:600; border-top:1px solid var(--mauve-lt); }
 
-  /* ── PUBLICATIONS ─────────────────────────────────────────── */
-  .publications { background: var(--moss); position: relative; overflow: hidden; }
-  .publications::before {
-    content: '';
-    position: absolute;
-    top: -200px; right: -200px;
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(193,123,78,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .publications .section-label { color: var(--terra-light); }
-  .publications .section-label::before { background: var(--terra-light); }
-  .publications .section-title { color: var(--cream); }
-  .publications .section-subtitle { color: rgba(245,240,232,0.6); }
+/* ── PROFILES ── */
+#profiles { background:var(--white); }
+#profiles .sec-eyebrow { color:var(--tan); }
+#profiles .sec-title { color:var(--dark); }
+.p-grid { display:flex; flex-wrap:wrap; gap:12px; }
+.p-card { display:inline-flex; align-items:center; gap:12px; background:var(--tan-bg); border:1.5px solid var(--tan-lt); border-radius:8px; padding:12px 18px; text-decoration:none; color:var(--text); transition:border-color 0.2s, box-shadow 0.2s; }
+.p-card:hover { border-color:var(--tan); box-shadow:0 3px 16px rgba(196,150,90,0.2); }
+.p-avatar { width:34px; height:34px; border-radius:50%; background:var(--dark); display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:0.72rem; color:var(--tan-lt); font-weight:500; flex-shrink:0; }
+.p-label { font-size:0.93rem; font-weight:500; color:var(--dark); }
+.p-hint { font-size:0.76rem; color:var(--text3); }
 
-  .pub-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-    margin-top: 3.5rem;
-  }
-  .pub-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius);
-    padding: 1.8rem;
-    transition: var(--transition);
-    cursor: default;
-  }
-  .pub-card:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(193,123,78,0.4);
-    transform: translateY(-3px);
-  }
-  .pub-year {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--terra-light);
-    font-weight: 500;
-    margin-bottom: 0.7rem;
-    letter-spacing: 0.08em;
-  }
-  .pub-title {
-    font-size: 0.92rem;
-    font-weight: 500;
-    color: var(--cream);
-    line-height: 1.55;
-    margin-bottom: 0.6rem;
-  }
-  .pub-venue {
-    font-size: 0.8rem;
-    color: rgba(245,240,232,0.5);
-    font-style: italic;
-  }
-  .pub-authors {
-    font-size: 0.78rem;
-    color: rgba(245,240,232,0.45);
-    margin-top: 0.4rem;
-    font-family: 'DM Mono', monospace;
-  }
+/* ── CONTACT ── */
+#contact { background:var(--dark); background-image:radial-gradient(ellipse at 20% 50%,rgba(122,158,136,0.12) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(196,150,90,0.1) 0%,transparent 45%); text-align:center; padding:80px 24px; }
+#contact .sec-eyebrow { color:var(--tan-lt); justify-content:center; }
+#contact .sec-eyebrow::after { display:none; }
+#contact .sec-title { color:var(--cream); text-align:center; }
+.contact-sub { font-size:1.02rem; color:rgba(253,246,237,0.58); max-width:420px; margin:0 auto 32px; line-height:1.75; }
+.contact-email { display:inline-flex; align-items:center; gap:10px; background:var(--tan-lt); color:var(--dark2); font-weight:600; font-size:1rem; padding:14px 32px; border-radius:6px; text-decoration:none; transition:background 0.22s; }
+.contact-email:hover { background:var(--cream); }
+.contact-links { display:flex; justify-content:center; gap:12px; margin-top:20px; }
+.c-link { border:1px solid rgba(196,150,90,0.28); color:rgba(253,246,237,0.72); padding:9px 20px; border-radius:6px; font-size:0.88rem; text-decoration:none; transition:border-color 0.2s, color 0.2s; }
+.c-link:hover { border-color:var(--tan-lt); color:var(--cream); }
 
-  /* ── RECOGNITION ──────────────────────────────────────────── */
-  .recognition { background: var(--cream-dark); }
-  .recog-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-top: 3.5rem;
-  }
-  .recog-card {
-    background: var(--white);
-    border: 1px solid rgba(44,74,62,0.08);
-    border-radius: var(--radius);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-  }
-  .recog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-  .recog-card .icon-wrap {
-    width: 56px; height: 56px;
-    background: linear-gradient(135deg, var(--cream), var(--cream-dark));
-    border: 1.5px solid rgba(44,74,62,0.12);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin: 0 auto 1.2rem;
-  }
-  .recog-card h4 {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: 0.4rem;
-    line-height: 1.35;
-  }
-  .recog-card p {
-    font-size: 0.78rem;
-    color: var(--light-grey);
-    line-height: 1.55;
-  }
-
-  /* ── CONTACT ──────────────────────────────────────────────── */
-  .contact { background: var(--cream); }
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 4rem;
-  }
-  .contact-card {
-    background: var(--white);
-    border: 1px solid rgba(44,74,62,0.08);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    box-shadow: var(--shadow-sm);
-  }
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--cream-dark);
-  }
-  .contact-item:last-child { border-bottom: none; }
-  .contact-icon {
-    width: 38px; height: 38px;
-    background: var(--cream);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-  .contact-item h5 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--light-grey);
-    margin-bottom: 0.2rem;
-  }
-  .contact-item p, .contact-item a {
-    font-size: 0.92rem;
-    color: var(--charcoal);
-    text-decoration: none;
-    transition: color var(--transition);
-  }
-  .contact-item a:hover { color: var(--moss); }
-
-  .contact-cta {
-    background: linear-gradient(135deg, var(--moss), var(--moss-mid));
-    border-radius: var(--radius-lg);
-    padding: 3rem;
-    color: var(--cream);
-    position: relative;
-    overflow: hidden;
-  }
-  .contact-cta::before {
-    content: '';
-    position: absolute;
-    bottom: -40px; right: -40px;
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.05);
-  }
-  .contact-cta h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 0.8rem;
-    line-height: 1.25;
-  }
-  .contact-cta h3 em { color: var(--terra-light); font-style: italic; }
-  .contact-cta p {
-    font-size: 0.92rem;
-    color: rgba(245,240,232,0.65);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-  }
-
-  /* ── FOOTER ───────────────────────────────────────────────── */
-  footer {
-    background: var(--charcoal);
-    padding: 3rem 0;
-    text-align: center;
-  }
-  .footer-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: var(--cream);
-    margin-bottom: 0.3rem;
-  }
-  .footer-tagline {
-    font-size: 0.78rem;
-    color: rgba(245,240,232,0.4);
-    letter-spacing: 0.06em;
-    margin-bottom: 1.5rem;
-  }
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    list-style: none;
-    margin-bottom: 2rem;
-  }
-  .footer-links a {
-    font-size: 0.78rem;
-    color: rgba(245,240,232,0.45);
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    transition: color var(--transition);
-  }
-  .footer-links a:hover { color: var(--terra-light); }
-  .footer-copy {
-    font-size: 0.72rem;
-    color: rgba(245,240,232,0.25);
-    font-family: 'DM Mono', monospace;
-  }
-
-  /* ── ANIMATIONS ───────────────────────────────────────────── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .fade-up:nth-child(1) { transition-delay: 0.05s; }
-  .fade-up:nth-child(2) { transition-delay: 0.12s; }
-  .fade-up:nth-child(3) { transition-delay: 0.19s; }
-  .fade-up:nth-child(4) { transition-delay: 0.26s; }
-  .fade-up:nth-child(5) { transition-delay: 0.33s; }
-  .fade-up:nth-child(6) { transition-delay: 0.40s; }
-
-  /* ── RESPONSIVE ───────────────────────────────────────────── */
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-text { padding: 9rem 2rem 4rem; }
-    .hero-visual { padding: 2rem; }
-    .hero-card { max-width: 100%; }
-    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .research-grid { grid-template-columns: 1fr 1fr; }
-    .recog-grid { grid-template-columns: 1fr 1fr; }
-    .pub-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-  }
-  @media (max-width: 600px) {
-    .research-grid, .recog-grid { grid-template-columns: 1fr; }
-    .project-item { grid-template-columns: 1fr; }
-    .project-amount { text-align: left; }
-  }
+/* ── ANIMATIONS ── */
+@keyframes riseIn { from { opacity:0; transform:translateY(30px) scale(0.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+@keyframes floatDown { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(8px); } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 </style>
 </head>
 <body>
 
-<!-- ── NAV ──────────────────────────────────────────────────── -->
-<nav id="main-nav">
-  <a href="#" class="nav-logo">Prof. Satyadhyan Chickerur</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#recognition">Recognition</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ── HERO ─────────────────────────────────────────────────── -->
-<section class="hero" id="home">
-  <div class="hero-text">
-    <div class="hero-badge"><span></span>KLE Technological University, Hubballi</div>
-    <div class="hero-role">Professor · Researcher · Innovator</div>
-    <div class="hero-name"><em>Satyadhyan</em></div>
-    <div class="hero-surname">Chickerur</div>
-    <div class="hero-divider"></div>
-    <p class="hero-desc">
-      Director, Centre for Artificial Intelligence Research. Pioneering the convergence of
-      High Performance Computing, Quantum Computing, and Medical AI for real-world impact.
-    </p>
-    <div class="hero-tags">
-      <span class="hero-tag">Ph.D. · VTU 2012</span>
-      <span class="hero-tag">MBA · Alagappa 2016</span>
-      <span class="hero-tag">SMIEEE</span>
-      <span class="hero-tag">NVIDIA DLI Ambassador</span>
-      <span class="hero-tag">26+ Years Experience</span>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-corner tl"></div><div class="hero-corner tr"></div>
+  <div class="hero-corner bl"></div><div class="hero-corner br"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-line"></span>
+      <span class="hero-eyebrow-text">Professor · Researcher · Innovator</span>
+      <span class="hero-eyebrow-line"></span>
     </div>
-    <div class="hero-cta">
-      <a href="#research" class="btn-primary">Explore Research</a>
-      <a href="mailto:chickerursr@ieee.org" class="btn-ghost">Get in Touch</a>
+    <h1 class="hero-name"><span class="accent">Satyadhyan</span><br>Chickerur</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-role">Ph.D. · MBA (Edu. Mgmt.) · SMIEEE · NVIDIA DLI Ambassador</p>
+    <p class="hero-org">Director, Centre for AI Research · KLE Technological University</p>
+    <div class="hero-pills">
+      <span class="pill">Artificial Intelligence</span>
+      <span class="pill">GPU Computing</span>
+      <span class="pill">Quantum ML</span>
+      <span class="pill">HPC</span>
+      <span class="pill">Healthcare AI</span>
+      <span class="pill">Deep Learning</span>
+    </div>
+    <div class="hero-actions">
+      <a class="h-btn h-btn-solid" href="https://scholar.google.co.in/citations?user=Obwc7esAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      <a class="h-btn h-btn-ghost" href="https://techxcelerateinnovations.com" target="_blank">🚀 My Startup</a>
+      <a class="h-btn h-btn-ghost" href="mailto:chickerursr@ieee.org">✉ Contact</a>
+      <a class="h-btn h-btn-ghost" href="http://linkedin.com/in/chickerursr" target="_blank">LinkedIn</a>
     </div>
   </div>
-
-  <div class="hero-visual">
-    <div class="hero-card">
-      <div class="stat-grid">
-        <div class="stat-item">
-          <span class="stat-number">50+</span>
-          <div class="stat-label">Publications</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">430+</span>
-          <div class="stat-label">Citations</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">10</span>
-          <div class="stat-label">h-Index</div>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">5+</span>
-          <div class="stat-label">Funded Projects</div>
-        </div>
-      </div>
-
-      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem; margin-top:0.5rem;">
-        <div style="font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--moss-light); margin-bottom:1rem; font-family:'DM Mono',monospace;">Director, CAIR</div>
-        <p style="font-size:0.85rem; color:rgba(245,240,232,0.6); line-height:1.65;">
-          Leading AI diagnostic systems, GPU/QPU acceleration research, and distributed deep learning for healthcare at KLE Tech's Centre for Artificial Intelligence Research.
-        </p>
-      </div>
-
-      <div class="social-links">
-        <a href="https://scholar.google.co.in/citations?user=Obwc7esAAAAJ" target="_blank" class="social-btn" title="Google Scholar">GS</a>
-        <a href="https://www.scopus.com/authid/detail.uri?authorId=24824178200" target="_blank" class="social-btn" title="Scopus">Sc</a>
-        <a href="https://www.webofscience.com/wos/author/record/32966" target="_blank" class="social-btn" title="Web of Science">WS</a>
-        <a href="https://twitter.com/chickerursr" target="_blank" class="social-btn" title="Twitter">𝕏</a>
-        <a href="https://linkedin.com/in/chickerursr" target="_blank" class="social-btn" title="LinkedIn">in</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-indicator">Scroll</div>
+  <div class="scroll-down">scroll</div>
 </section>
 
-<!-- ── NEWS TICKER ────────────────────────────────────────────── -->
-<div class="news-bar">
-  <div class="news-bar-inner">
-    <div class="news-label">Latest News</div>
-    <div class="news-scroll-wrapper">
-      <div class="news-scroll">
-        <span class="news-item">📌 Aug 2025 — ICRAI 2025 Special Session on Healthcare AI — <a href="#">Submit by Oct 31, 2025</a></span>
-        <span class="news-item">📌 Sept 2025 — General Chair, <a href="#">ICPQC 2026 (Physics & Quantum Computing)</a> — Submissions open</span>
-        <span class="news-item">📌 April 2025 — Panelist, The Hindu Education Plus Career Counselling</span>
-        <span class="news-item">📌 April 2025 — Expert Talk on Digital Twin at HAL Bengaluru</span>
-        <span class="news-item">📌 June 2023 — Speaker at ACM India Summer School on HPC & AI at IIT Palakkad</span>
-        <!-- duplicate for infinite loop -->
-        <span class="news-item">📌 Aug 2025 — ICRAI 2025 Special Session on Healthcare AI — <a href="#">Submit by Oct 31, 2025</a></span>
-        <span class="news-item">📌 Sept 2025 — General Chair, <a href="#">ICPQC 2026 (Physics & Quantum Computing)</a> — Submissions open</span>
-        <span class="news-item">📌 April 2025 — Panelist, The Hindu Education Plus Career Counselling</span>
-        <span class="news-item">📌 April 2025 — Expert Talk on Digital Twin at HAL Bengaluru</span>
-        <span class="news-item">📌 June 2023 — Speaker at ACM India Summer School on HPC & AI at IIT Palakkad</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── ABOUT ───────────────────────────────────────────────────── -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="section-label">About</div>
-    <h2 class="section-title">Where <em>Computation</em> Meets<br>Clinical Reality</h2>
-    <div class="about-grid">
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="wrap">
+    <p class="sec-eyebrow">01 · About</p>
+    <h2 class="sec-title">Researcher · Educator · Mentor</h2>
+    <div class="about-layout">
       <div class="about-text">
-        <p>
-          I am a researcher, trainer, mentor, consultant, Professor of Computer Science and Engineering
-          at KLE Technological University, and Director of the Centre for Artificial Intelligence Research (CAIR).
-        </p>
-        <p>
-          My research bridges hardware-level GPU/QPU acceleration with clinical utility — developing
-          high-fidelity AI diagnostic systems for ophthalmology, radiology, and medical imaging informatics.
-          I specifically focus on deploying distributed deep learning frameworks to solve complex medical
-          imaging challenges such as automated grading systems for diabetic retinopathy.
-        </p>
-        <p>
-          I am an NVIDIA DLI Certified Instructor and Ambassador, former Execom Member of the IEEE
-          Signal Processing Society (Bangalore Chapter, 2007–2009), and a member of the
-          IEEE P3120 Standard for Quantum Computing Architecture committee.
-        </p>
-        <p>
-          I served as one of the judges and problem setters for the Asia Regionals' ACM ICPC programming
-          contest in 2007 and 2008, and was an Intel-IISC-VTU Multi-core Curriculum Development Committee member.
-        </p>
+        <p>I am a <strong>Professor at KLE Technological University</strong> and Director of the <strong>Centre for Artificial Intelligence Research</strong>. I am an <strong>NVIDIA DLI Certified Instructor and Ambassador</strong>, bringing cutting-edge GPU programming knowledge to learners across India and beyond.</p>
+        <p>My work spans high-performance computing, deep learning, quantum machine learning, and applied AI — from theoretical research to hands-on industry training at IIT Bombay, IIT Palakkad, NIT Calicut, and international venues in China and the USA.</p>
+        <p>I am the founder of <a href="https://techxcelerateinnovations.com" target="_blank">TechXcelerate Innovations Pvt. Ltd.</a> — an AI-focused startup specialising in healthcare AI, quantum computing, and intelligent product design.</p>
+        <p>✉ <a href="mailto:chickerursr@ieee.org">chickerursr@ieee.org</a></p>
       </div>
-      <div class="about-highlights">
-        <div class="highlight-card fade-up">
-          <div class="highlight-icon">🧠</div>
-          <div class="highlight-content">
-            <h4>AI & Deep Learning</h4>
-            <p>Distributed deep learning, XAI, medical imaging informatics, and diabetic retinopathy grading using PyTorch & TensorFlow on GPU clusters.</p>
-          </div>
-        </div>
-        <div class="highlight-card fade-up">
-          <div class="highlight-icon">⚡</div>
-          <div class="highlight-content">
-            <h4>High Performance Computing</h4>
-            <p>CUDA, OpenCL, OpenMP, OpenACC, Massively Parallel Processing, GPU/QPU architectures, and Softcores for FPGA.</p>
-          </div>
-        </div>
-        <div class="highlight-card fade-up">
-          <div class="highlight-icon">⚛️</div>
-          <div class="highlight-content">
-            <h4>Quantum Computing</h4>
-            <p>Quantum SDLC, Variational Quantum Circuits, QNLP, Qiskit Metal hardware simulation, and quantum ML for healthcare.</p>
-          </div>
-        </div>
-        <div class="highlight-card fade-up">
-          <div class="highlight-icon">🎓</div>
-          <div class="highlight-content">
-            <h4>Teaching & Outreach</h4>
-            <p>NPTEL MOOC on Applied Accelerated AI (12 weeks), NVIDIA DLI workshops, General Chair ICPQC 2026, SIH Center Head 2017–2023.</p>
-          </div>
-        </div>
+      <div class="aff-panel">
+        <h3>Key Affiliations</h3>
+        <div class="aff-row"><div class="aff-dot"></div>NVIDIA DLI Certified Instructor &amp; Ambassador</div>
+        <div class="aff-row"><div class="aff-dot"></div>Senior Member, IEEE (SMIEEE)</div>
+        <div class="aff-row"><div class="aff-dot"></div>IEEE Signal Processing Society Execom, Bangalore (2007–09)</div>
+        <div class="aff-row"><div class="aff-dot"></div>Intel–IISc–VTU Multi-core Curriculum Developer &amp; Trainer</div>
+        <div class="aff-row"><div class="aff-dot"></div>ACM ICPC Asia Regionals Judge &amp; Problem Setter (2007–08)</div>
+        <div class="aff-row"><div class="aff-dot"></div>Member, Open Power Foundation</div>
+        <div class="aff-row"><div class="aff-dot"></div>Center Head, Smart India Hackathon (2017–2023)</div>
+        <div class="aff-row"><div class="aff-dot"></div>General Chair, ICPQC 2026</div>
+        <div class="aff-row"><div class="aff-dot"></div>Founder, TechXcelerate Innovations Pvt. Ltd.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── RESEARCH AREAS ──────────────────────────────────────────── -->
-<section class="research" id="research">
-  <div class="container">
-    <div class="section-label">Research</div>
-    <h2 class="section-title">Core Research <em>Areas</em></h2>
-    <p class="section-subtitle">Integrating High Performance Computing with Medical Informatics to deliver scalable clinical solutions.</p>
-    <div class="research-grid">
-      <div class="research-card fade-up">
-        <span class="research-card-icon">👁️</span>
-        <h3>Medical Imaging & Diabetic Retinopathy</h3>
-        <p>Automated grading of diabetic retinopathy at Primary Healthcare centres using Distributed Deep Learning — data and pipeline parallelism with Horovod and PyTorch.</p>
-        <div class="tag-list">
-          <span class="tag">Retinopathy Grading</span>
-          <span class="tag">CNN</span>
-          <span class="tag">Distributed DL</span>
-          <span class="tag">PHC Deployment</span>
+<!-- ══ STARTUP ══ -->
+<section id="startup">
+  <div class="wrap">
+    <p class="sec-eyebrow">02 · Venture</p>
+    <h2 class="sec-title">Startup &amp; Innovation</h2>
+    <div class="startup-wrap">
+      <div class="startup-top">
+        <div class="startup-monogram">TX<span>Innovations</span></div>
+        <div class="startup-hdr">
+          <div class="startup-name">TechXcelerate Innovations Pvt. Ltd.</div>
+          <div class="startup-tag">Unlocking opportunities through AI-based product innovation</div>
         </div>
       </div>
-      <div class="research-card fade-up">
-        <span class="research-card-icon">⚛️</span>
-        <h3>Quantum Software Development Lifecycle</h3>
-        <p>Pioneering the QSDLC for Diabetic Retinopathy classification. Simulating Quantum Hardware using Qiskit Metal. Quantum NLP and Variational Quantum Circuits for clinical data.</p>
-        <div class="tag-list">
-          <span class="tag">Qiskit</span>
-          <span class="tag">QNLP</span>
-          <span class="tag">VQC</span>
-          <span class="tag">MeiTy QCAL</span>
+      <div class="startup-body">
+        <div class="startup-chips">
+          <div class="s-chip">🤖 Artificial Intelligence</div>
+          <div class="s-chip">🏥 Healthcare Tech</div>
+          <div class="s-chip">⚛️ Quantum Computing</div>
+          <div class="s-chip">🛠️ Product Development</div>
         </div>
-      </div>
-      <div class="research-card fade-up">
-        <span class="research-card-icon">🔬</span>
-        <h3>Explainable AI for Clinical Diagnosis</h3>
-        <p>XAI-based skin disease detection, glaucoma diagnosis using handcrafted vs. deep features, and retinopathy of prematurity grading with feedforward networks.</p>
-        <div class="tag-list">
-          <span class="tag">XAI</span>
-          <span class="tag">Glaucoma</span>
-          <span class="tag">Skin Disease</span>
-          <span class="tag">Transparency</span>
-        </div>
-      </div>
-      <div class="research-card fade-up">
-        <span class="research-card-icon">🖥️</span>
-        <h3>High Performance & Reconfigurable Computing</h3>
-        <p>GPU/QPU acceleration, OpenPOWER Microwatt, Softcores for FPGA, edge detection on FPGA. Author of <em>High Performance Parallel Computing</em> (IntechOpen, 2019).</p>
-        <div class="tag-list">
-          <span class="tag">CUDA</span>
-          <span class="tag">FPGA</span>
-          <span class="tag">OpenPOWER</span>
-          <span class="tag">Parallel Processing</span>
-        </div>
-      </div>
-      <div class="research-card fade-up">
-        <span class="research-card-icon">🌊</span>
-        <h3>Computational Fluid Dynamics via CNN</h3>
-        <p>CNN-based approaches for fluid dynamics simulations and steady flow approximation using capsule neural networks, accelerating biomedical engineering simulations.</p>
-        <div class="tag-list">
-          <span class="tag">CFD</span>
-          <span class="tag">Capsule Networks</span>
-          <span class="tag">Biomedical</span>
-          <span class="tag">GPU-Accelerated</span>
-        </div>
-      </div>
-      <div class="research-card fade-up">
-        <span class="research-card-icon">🛰️</span>
-        <h3>Hyperspectral & Remote Sensing</h3>
-        <p>Hybrid CNN with change detection on hyperspectral imagery, forest area change detection using satellite data, and classification using deep learning models.</p>
-        <div class="tag-list">
-          <span class="tag">Hyperspectral</span>
-          <span class="tag">Change Detection</span>
-          <span class="tag">Remote Sensing</span>
-          <span class="tag">Hybrid CNN</span>
-        </div>
+        <p class="startup-desc">TechXcelerate Innovations bridges cutting-edge academic research with real-world AI product development. Specialising in healthcare AI, quantum computing applications, and intelligent product design, leveraging deep expertise in accelerated computing to build solutions with tangible impact.</p>
+        <a class="startup-link" href="https://techxcelerateinnovations.com" target="_blank">Visit TechXcelerate Innovations →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FUNDED PROJECTS ─────────────────────────────────────────── -->
-<section class="projects" id="projects">
-  <div class="container">
-    <div class="section-label">Funded Projects</div>
-    <h2 class="section-title">Externally Funded <em>Research</em></h2>
-    <p class="section-subtitle">Successfully secured and managed research grants from government agencies, industry, and international organizations.</p>
-    <div class="projects-list">
-      <div class="project-item fade-up">
-        <div>
-          <div class="project-header">
-            <span class="project-role">PI</span>
-          </div>
-          <h4>Quantum Software Development Lifecycle for Diabetic Retinopathy Classification (2023–2025)</h4>
-          <div class="project-meta">
-            <span>MeiTy QCAL</span>
-            <span>2023–2025</span>
-          </div>
-        </div>
-        <div class="project-amount">
-          <span class="amt">USD 19,860</span>
-          <div class="agency">MeiTy · QCAL</div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up">
-        <div>
-          <div class="project-header">
-            <span class="project-role">PI</span>
-          </div>
-          <h4>Automated Grading of Diabetic Retinopathy at PHCs using Distributed Deep Learning Framework (2021–2023)</h4>
-          <div class="project-meta">
-            <span>DST-NSM</span>
-            <span>2021–2023</span>
-          </div>
-        </div>
-        <div class="project-amount">
-          <span class="amt">₹19.88 L</span>
-          <div class="agency">DST · NSM</div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up">
-        <div>
-          <div class="project-header">
-            <span class="project-role">PI</span>
-          </div>
-          <h4>Establishment of Centre for High Performance Computing</h4>
-          <div class="project-meta">
-            <span>KLE Technological University</span>
-          </div>
-        </div>
-        <div class="project-amount">
-          <span class="amt">₹100 L</span>
-          <div class="agency">KLETech</div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up">
-        <div>
-          <div class="project-header">
-            <span class="project-role co">CO-PI</span>
-          </div>
-          <h4>Design and Development of Reconfigurable Kit for Image Restoration (2011)</h4>
-          <div class="project-meta">
-            <span>AICTE (RPS)</span>
-            <span>2011</span>
-          </div>
-        </div>
-        <div class="project-amount">
-          <span class="amt">₹16 L</span>
-          <div class="agency">AICTE · RPS</div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up">
-        <div>
-          <div class="project-header">
-            <span class="project-role">PI</span>
-          </div>
-          <h4>Image Restoration using Evolutionary Computing Approach (2003)</h4>
-          <div class="project-meta">
-            <span>AICTE</span>
-            <span>2003</span>
-          </div>
-        </div>
-        <div class="project-amount">
-          <span class="amt">₹10 L</span>
-          <div class="agency">AICTE</div>
-        </div>
-      </div>
-
-      <div class="project-item fade-up">
-        <div>
-          <div class="project-header">
-            <span class="project-role">PI</span>
-          </div>
-          <h4>GPU Education Center — NVIDIA (Multiple Cycles since 2012)</h4>
-          <div class="project-meta">
-            <span>NVIDIA Corporation</span>
-            <span>2012–Present</span>
-          </div>
-        </div>
-        <div class="project-amount">
-          <span class="amt">In-Kind</span>
-          <div class="agency">NVIDIA</div>
-        </div>
-      </div>
+<!-- ══ NEWS ══ -->
+<section id="news">
+  <div class="wrap">
+    <p class="sec-eyebrow">03 · Updates</p>
+    <h2 class="sec-title">Latest News</h2>
+    <div class="news-rows">
+      <div class="news-row"><span class="n-date">Aug 2025</span><p class="n-text"><a href="https://icrai2025.iaasse.org/sessions.html" target="_blank">ICRAI 2025 — Special Session: Reimagining Healthcare</a>. Deadline: 31 Oct 2025. Springer <em>Lecture Notes in Networks and Systems</em>.</p></div>
+      <div class="news-row"><span class="n-date">Sep 2025</span><p class="n-text"><a href="https://www.ic-pqc.com/GeneralChair" target="_blank">ICPQC 2026 — General Chair</a>. International Conference on Physics &amp; Quantum Computing. Deadline: 28 March 2026.</p></div>
+      <div class="news-row"><span class="n-date">Apr 2025</span><p class="n-text">Expert Session: <em>Digital Twin — Concepts and Applications in Aerospace</em> at Hindustan Aeronautics Limited (HAL), Bengaluru.</p></div>
+      <div class="news-row"><span class="n-date">Apr 2025</span><p class="n-text"><a href="https://www.thehindu.com/news/national/karnataka/passion-hard-work-skills-needed-to-be-successful-bhuvanesh-patil/article69494544.ece" target="_blank">Panelist — The Hindu Education Plus Career Counselling 2025</a>.</p></div>
+      <div class="news-row"><span class="n-date">Jul 2023</span><p class="n-text"><a href="https://drive.google.com/file/d/1YF12ZMLJPa63PzQr59ueShwXDzFAE0CD/view" target="_blank">Speaker — FDP on Chip Design</a>, NIT Calicut × IBM.</p></div>
+      <div class="news-row"><span class="n-date">Jun 2023</span><p class="n-text"><a href="https://india.acm.org/education/acm-india-summer-schools-2023" target="_blank">Speaker — ACM India Summer School on HPC &amp; AI Compute Continuum</a>, IIT Palakkad.</p></div>
+      <div class="news-row"><span class="n-date">May 2023</span><p class="n-text"><a href="https://onlinecourses.nptel.ac.in/noc23_cs104/preview" target="_blank">NPTEL — Applied Accelerated Artificial Intelligence</a>. 12-week course, July–Oct 2023.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── PUBLICATIONS ────────────────────────────────────────────── -->
-<section class="publications" id="publications">
-  <div class="container">
-    <div class="section-label">Publications</div>
-    <h2 class="section-title">Selected <em>Recent</em> Publications</h2>
-    <p class="section-subtitle">50+ peer-reviewed papers in SCI & Scopus indexed journals. View the full list on Google Scholar.</p>
+<!-- ══ GALLERY ══ -->
+<section id="gallery">
+  <div class="wrap">
+    <p class="sec-eyebrow" style="color:var(--tan-lt);">04 · Moments</p>
+    <h2 class="sec-title" style="color:var(--cream);">Photo Gallery</h2>
+    <p class="gallery-intro">Snapshots from conferences, hackathons, workshops and research visits around the world. Replace each <code style="font-size:0.7rem;color:var(--tan-lt);background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:3px;">src=""</code> with your Google Drive image URL to make photos permanent.</p>
+
+    <!-- ────── NVIDIA GTC 2018 ────── -->
+    <div class="g-category">
+      <div class="g-cat-label">
+        <span class="g-cat-icon">🎮</span>
+        <span class="g-cat-name">NVIDIA GTC 2018 · San Jose</span>
+        <span class="g-cat-line"></span>
+      </div>
+      <div class="g-grid-hero">
+
+        <!-- PHOTO 1: Jensen Huang selfie -->
+        <div class="photo-card tall">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="Selfie with Jensen Huang NVIDIA CEO GTC 2018">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🤳</div>
+              <div class="ph-label">Selfie with Jensen Huang<br>NVIDIA CEO</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">With Jensen Huang — NVIDIA CEO</div>
+            <div class="photo-sub">GTC 2018 · San Jose Convention Center</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <!-- PHOTO 2: GTC Convention Center -->
+          <div class="photo-card">
+            <div class="photo-frame">
+              <img src="ADD_URL_HERE"
+                   alt="GPU Technology Conference GTC 2018 San Jose Convention Center">
+              <div class="photo-placeholder">
+                <div class="ph-icon">🏛️</div>
+                <div class="ph-label">GTC Convention Center</div>
+                <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+              </div>
+            </div>
+            <div class="photo-meta">
+              <div class="photo-title">San Jose Convention Center</div>
+              <div class="photo-sub">GPU Technology Conference 2018</div>
+            </div>
+          </div>
+
+          <!-- PHOTO 3: GTC extra -->
+          <div class="photo-card">
+            <div class="photo-frame">
+              <img src="ADD_URL_HERE"
+                   alt="GTC 2018 Conference moments">
+              <div class="photo-placeholder">
+                <div class="ph-icon">📸</div>
+                <div class="ph-label">GTC Conference Moments</div>
+                <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+              </div>
+            </div>
+            <div class="photo-meta">
+              <div class="photo-title">Conference Highlights</div>
+              <div class="photo-sub">GTC 2018 · San Jose</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ────── OpenACC Shanghai 2018 ────── -->
+    <div class="g-category">
+      <div class="g-cat-label">
+        <span class="g-cat-icon">🇨🇳</span>
+        <span class="g-cat-name">OpenACC Hackathon · Shanghai Jiao Tong University · 2018</span>
+        <span class="g-cat-line"></span>
+      </div>
+      <div class="g-grid-3">
+
+        <!-- PHOTO 4: Team Linkers -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="OpenACC Hackathon Shanghai mentoring team Linkers">
+            <div class="photo-placeholder">
+              <div class="ph-icon">👨‍💻</div>
+              <div class="ph-label">Co-mentoring Team "Linkers"<br>with Yao Liu, ICT China</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Co-mentoring Team "Linkers"</div>
+            <div class="photo-sub">With Yao Liu · ICT China</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 5: Workshop session -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="OpenACC Hackathon workshop session SJTU 2018">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🎓</div>
+              <div class="ph-label">Hackathon Workshop Session</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Hackathon Workshop Session</div>
+            <div class="photo-sub">SJTU · Shanghai · 2018</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 6: SJTU campus -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="Shanghai Jiao Tong University campus OpenACC 2018">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🏛️</div>
+              <div class="ph-label">SJTU Campus</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Shanghai Jiao Tong University</div>
+            <div class="photo-sub">OpenACC Hackathon 2018</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ────── NSM Hackathons ────── -->
+    <div class="g-category">
+      <div class="g-cat-label">
+        <span class="g-cat-icon">🚀</span>
+        <span class="g-cat-name">NSM Hackathons · IIT Bombay &amp; IISc Bangalore</span>
+        <span class="g-cat-line"></span>
+      </div>
+      <div class="g-grid-4">
+
+        <!-- PHOTO 7: IIT Bombay 2022 a -->
+        <div class="photo-card sq">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="NSM Hackathon IIT Bombay 2022">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🏫</div>
+              <div class="ph-label">NSM Hackathon<br>IIT Bombay 2022</div>
+              <div class="ph-hint">Replace ADD_URL_HERE</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">NSM Hackathon</div>
+            <div class="photo-sub">IIT Bombay · Sep 2022</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 8: IIT Bombay 2022 b -->
+        <div class="photo-card sq">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="NSM Hackathon IIT Bombay 2022 mentoring teams">
+            <div class="photo-placeholder">
+              <div class="ph-icon">👥</div>
+              <div class="ph-label">Mentoring Teams<br>IIT Bombay</div>
+              <div class="ph-hint">Replace ADD_URL_HERE</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Team Mentoring</div>
+            <div class="photo-sub">IIT Bombay · 2022</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 9: IISc 2023 a -->
+        <div class="photo-card sq">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="NSM Open Hackathon IISc Bangalore 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🔬</div>
+              <div class="ph-label">NSM Open Hackathon<br>IISc Bangalore 2023</div>
+              <div class="ph-hint">Replace ADD_URL_HERE</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">NSM Open Hackathon</div>
+            <div class="photo-sub">IISc Bangalore · Oct 2023</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 10: IISc 2023 b -->
+        <div class="photo-card sq">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="NSM Hackathon IISc team presentation 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🏆</div>
+              <div class="ph-label">Team Presentation<br>NSM · IISc</div>
+              <div class="ph-hint">Replace ADD_URL_HERE</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Team Presentation</div>
+            <div class="photo-sub">NSM · IISc · 2023</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ────── ACM IIT Palakkad 2023 ────── -->
+    <div class="g-category">
+      <div class="g-cat-label">
+        <span class="g-cat-icon">🎓</span>
+        <span class="g-cat-name">ACM India Summer School · IIT Palakkad · 2023</span>
+        <span class="g-cat-line"></span>
+      </div>
+      <div class="g-grid-3">
+
+        <!-- PHOTO 11: Talk -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="ACM India Summer School HPC AI talk IIT Palakkad 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🎤</div>
+              <div class="ph-label">Talk: HPC &amp; AI Compute<br>Continuum</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Talk: HPC &amp; AI Compute Continuum</div>
+            <div class="photo-sub">IIT Palakkad · Jun 2023</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 12: Workshop -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="ACM Summer School workshop session IIT Palakkad 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">👨‍🏫</div>
+              <div class="ph-label">Workshop Session</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Workshop Session</div>
+            <div class="photo-sub">ACM Summer School 2023</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 13: Group photo -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="Group photo ACM Summer School IIT Palakkad 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">📸</div>
+              <div class="ph-label">Group Photo</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Group Photo</div>
+            <div class="photo-sub">IIT Palakkad · 2023</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ────── HAL, GDG, IWD ────── -->
+    <div class="g-category">
+      <div class="g-cat-label">
+        <span class="g-cat-icon">✈️</span>
+        <span class="g-cat-name">HAL Bengaluru · GDG Hubli · Other Talks</span>
+        <span class="g-cat-line"></span>
+      </div>
+      <div class="g-grid-3">
+
+        <!-- PHOTO 14: HAL 2025 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="Digital Twin talk HAL Hindustan Aeronautics Limited Bengaluru 2025">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🛩️</div>
+              <div class="ph-label">Digital Twin Talk<br>HAL Bengaluru · Apr 2025</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Digital Twin — Aerospace</div>
+            <div class="photo-sub">HAL Bengaluru · Apr 2025</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 15: DevFest GDG Hubli 2023 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="Generative AI talk DevFest GDG Hubli 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🌐</div>
+              <div class="ph-label">Generative AI Talk<br>DevFest · GDG Hubli · Dec 2023</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Talk on Generative AI</div>
+            <div class="photo-sub">DevFest · GDG Hubli · Dec 2023</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 16: IWD GDG Hubli 2023 -->
+        <div class="photo-card">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="IWD 2023 TensorFlow talk GDG Hubli">
+            <div class="photo-placeholder">
+              <div class="ph-icon">💡</div>
+              <div class="ph-label">TensorFlow Talk<br>IWD 2023 · GDG Hubli</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">TensorFlow Talk — IWD 2023</div>
+            <div class="photo-sub">GDG Hubli · Apr 2023</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ────── Quantum ML Workshop DSU ────── -->
+    <div class="g-category">
+      <div class="g-cat-label">
+        <span class="g-cat-icon">⚛️</span>
+        <span class="g-cat-name">Quantum ML Workshop · Dayanand Sagar University · 2023</span>
+        <span class="g-cat-line"></span>
+      </div>
+      <div class="g-grid-2">
+
+        <!-- PHOTO 17: QML a -->
+        <div class="photo-card wide">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="Quantum Machine Learning workshop Dayanand Sagar University 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">🔬</div>
+              <div class="ph-label">Quantum ML Workshop Session</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Workshop on Quantum Machine Learning</div>
+            <div class="photo-sub">Dayanand Sagar University · 2023</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 18: QML b -->
+        <div class="photo-card wide">
+          <div class="photo-frame">
+            <img src="ADD_URL_HERE"
+                 alt="Quantum ML Workshop demo Dayanand Sagar University 2023">
+            <div class="photo-placeholder">
+              <div class="ph-icon">📸</div>
+              <div class="ph-label">Hands-on Demo / Group Photo</div>
+              <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+            </div>
+          </div>
+          <div class="photo-meta">
+            <div class="photo-title">Hands-on Demo</div>
+            <div class="photo-sub">QML Workshop · 2023</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /wrap -->
+</section>
+
+<!-- ══ UK VISITS ══ -->
+<section id="uk">
+  <div class="wrap">
+    <p class="sec-eyebrow">05 · International</p>
+    <h2 class="sec-title">Visits to UK Universities</h2>
+    <p class="uk-intro">Academic engagement, research exchange and collaborative visits to leading universities across the United Kingdom — Oxford, Cambridge, UCL, University of East Anglia, Imperial and beyond.</p>
+    <div class="uk-grid">
+
+      <!-- PHOTO 19: Oxford -->
+      <div class="uk-card">
+        <div class="uk-frame">
+          <img src="ADD_URL_HERE"
+               alt="University of Oxford visit Prof Satyadhyan Chickerur">
+          <div class="photo-placeholder">
+            <div class="ph-icon">📸</div>
+            <div class="ph-label">Your Oxford photo here</div>
+            <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+          </div>
+        </div>
+        <div class="uk-body">
+          <div class="uk-name">University of Oxford</div>
+          <div class="uk-desc">Visit to one of the world's oldest universities, founded c. 1096.</div>
+        </div>
+      </div>
+
+      <!-- PHOTO 20: Cambridge -->
+      <div class="uk-card">
+        <div class="uk-frame">
+          <img src="ADD_URL_HERE"
+               alt="University of Cambridge visit Prof Satyadhyan Chickerur">
+          <div class="photo-placeholder">
+            <div class="ph-icon">📸</div>
+            <div class="ph-label">Your Cambridge photo here</div>
+            <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+          </div>
+        </div>
+        <div class="uk-body">
+          <div class="uk-name">University of Cambridge</div>
+          <div class="uk-desc">Research engagement at this globally renowned centre of science &amp; innovation.</div>
+        </div>
+      </div>
+
+      <!-- PHOTO 21: UCL -->
+      <div class="uk-card">
+        <div class="uk-frame">
+          <img src="ADD_URL_HERE"
+               alt="UCL University College London visit Prof Satyadhyan Chickerur">
+          <div class="photo-placeholder">
+            <div class="ph-icon">📸</div>
+            <div class="ph-label">Your UCL photo here</div>
+            <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+          </div>
+        </div>
+        <div class="uk-body">
+          <div class="uk-name">University College London (UCL)</div>
+          <div class="uk-desc">Academic exchange at the UK's leading multidisciplinary research university.</div>
+        </div>
+      </div>
+
+      <!-- PHOTO 22: UEA -->
+      <div class="uk-card">
+        <div class="uk-frame">
+          <img src="ADD_URL_HERE"
+               alt="University of East Anglia visit Prof Satyadhyan Chickerur">
+          <div class="photo-placeholder">
+            <div class="ph-icon">📸</div>
+            <div class="ph-label">Your UEA photo here</div>
+            <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+          </div>
+        </div>
+        <div class="uk-body">
+          <div class="uk-name">University of East Anglia</div>
+          <div class="uk-desc">Collaborative visit to UEA's computing &amp; AI research community.</div>
+        </div>
+      </div>
+
+      <!-- PHOTO 23: Imperial -->
+      <div class="uk-card">
+        <div class="uk-frame">
+          <img src="ADD_URL_HERE"
+               alt="Imperial College London visit Prof Satyadhyan Chickerur">
+          <div class="photo-placeholder">
+            <div class="ph-icon">📸</div>
+            <div class="ph-label">Your Imperial photo here</div>
+            <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+          </div>
+        </div>
+        <div class="uk-body">
+          <div class="uk-name">Imperial College London</div>
+          <div class="uk-desc">Interaction with world-class engineers &amp; technologists.</div>
+        </div>
+      </div>
+
+      <!-- PHOTO 24: Other UK -->
+      <div class="uk-card">
+        <div class="uk-frame">
+          <img src="ADD_URL_HERE"
+               alt="Other UK university visit Prof Satyadhyan Chickerur">
+          <div class="photo-placeholder">
+            <div class="ph-icon">📸</div>
+            <div class="ph-label">Other UK university visit</div>
+            <div class="ph-hint">Replace ADD_URL_HERE with your Google Drive URL</div>
+          </div>
+        </div>
+        <div class="uk-body">
+          <div class="uk-name">Other UK Institution</div>
+          <div class="uk-desc">Further academic &amp; collaborative engagements across the UK.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TALKS ══ -->
+<section id="talks">
+  <div class="wrap">
+    <p class="sec-eyebrow">06 · Talks &amp; Events</p>
+    <h2 class="sec-title">Invited Talks &amp; Appearances</h2>
+    <div class="talks-list">
+      <div class="t-card"><span class="t-badge">Keynote · 2025</span><div class="t-title">Digital Twin: Concepts &amp; Applications in Aerospace</div><div class="t-venue">HAL Bengaluru · Apr 2025</div></div>
+      <div class="t-card"><span class="t-badge">Panelist · 2025</span><div class="t-title">The Hindu Education Plus Career Counselling</div><div class="t-venue">Career Pathways in Technology</div></div>
+      <div class="t-card"><span class="t-badge">Talk · 2023</span><div class="t-title">Generative AI</div><div class="t-venue">DevFest 2023 — GDG Hubli &amp; Deshpande Startups</div></div>
+      <div class="t-card"><span class="t-badge">Speaker · 2023</span><div class="t-title">HPC and AI Compute Continuum</div><div class="t-venue">ACM India Summer School · IIT Palakkad</div></div>
+      <div class="t-card"><span class="t-badge">Speaker · 2023</span><div class="t-title">Chip Design — FDP</div><div class="t-venue">NIT Calicut × IBM</div></div>
+      <div class="t-card"><span class="t-badge">Talk · 2023</span><div class="t-title">TensorFlow &amp; TensorFlow Lite</div><div class="t-venue">IWD 2023 — GDG Hubli</div></div>
+      <div class="t-card"><span class="t-badge">Mentor · 2023</span><div class="t-title">NSM Open Hackathon</div><div class="t-venue">IISc Bangalore · Oct 2023</div></div>
+      <div class="t-card"><span class="t-badge">Mentor · 2022</span><div class="t-title">NSM Hackathon</div><div class="t-venue">IIT Bombay · Sep 2022</div></div>
+      <div class="t-card"><span class="t-badge">Workshop · 2023</span><div class="t-title">Quantum Machine Learning</div><div class="t-venue">Dayanand Sagar University</div></div>
+      <div class="t-card"><span class="t-badge">Conference · 2018</span><div class="t-title">GPU Technology Conference GTC 2018</div><div class="t-venue">San Jose Convention Center · Met Jensen Huang</div></div>
+      <div class="t-card"><span class="t-badge">Mentor · 2018</span><div class="t-title">OpenACC Hackathon</div><div class="t-venue">Shanghai Jiao Tong University, China</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PUBLICATIONS ══ -->
+<section id="pubs">
+  <div class="wrap">
+    <p class="sec-eyebrow">07 · Publications</p>
+    <h2 class="sec-title">Books &amp; Courses</h2>
     <div class="pub-grid">
-      <div class="pub-card fade-up">
-        <div class="pub-year">2023</div>
-        <div class="pub-title">Effective Deep Learning Data Augmentation Techniques for Diabetic Retinopathy Classification</div>
-        <div class="pub-venue">Procedia Computer Science, Vol. 218, pp. 1156–1165</div>
-        <div class="pub-authors">Patil MS, Chickerur S, Abhimalya C, et al.</div>
-      </div>
-      <div class="pub-card fade-up">
-        <div class="pub-year">2023</div>
-        <div class="pub-title">Distributed Deep Learning with Data Parallelism for Diabetic Retinopathy Classification</div>
-        <div class="pub-venue">Int. Conference on Smart Trends in Computing and Communications, pp. 49–60</div>
-        <div class="pub-authors">Patil SS, Patil MS, Chickerur S, et al.</div>
-      </div>
-      <div class="pub-card fade-up">
-        <div class="pub-year">2022</div>
-        <div class="pub-title">Pipeline Parallelism in Distributed Deep Learning for Diabetic Retinopathy Classification</div>
-        <div class="pub-venue">Procedia Computer Science, Vol. 215, pp. 393–402</div>
-        <div class="pub-authors">Patil SA, Patil MS, Giraddi S, Chickerur S, et al.</div>
-      </div>
-      <div class="pub-card fade-up">
-        <div class="pub-year">2021</div>
-        <div class="pub-title">Power-Aware Characteristics of Matrix Operations on Multicores</div>
-        <div class="pub-venue">Applied Artificial Intelligence, Vol. 35(15), pp. 2102–2123</div>
-        <div class="pub-authors">Konnurmath G, Chickerur S</div>
-      </div>
-      <div class="pub-card fade-up">
-        <div class="pub-year">2021</div>
-        <div class="pub-title">Deep Hyperparameter Transfer Learning for Diabetic Retinopathy Classification</div>
-        <div class="pub-venue">Turkish Journal of Electrical Engineering & Computer Sciences, Vol. 29(8), pp. 2824–2843</div>
-        <div class="pub-authors">Patil M, Chickerur S, Bakale V, Giraddi S, et al.</div>
-      </div>
-      <div class="pub-card fade-up">
-        <div class="pub-year">2012</div>
-        <div class="pub-title">Reconfigurable Computing: A Review</div>
-        <div class="pub-venue">Recent Patents on Computer Science, Vol. 5(3), pp. 226–237 — Most Accessed Award</div>
-        <div class="pub-authors">Chickerur S, Hiriyannaiah S, Rayudu DMK, Kumar M</div>
-      </div>
-    </div>
-    <div style="margin-top:2.5rem; text-align:center;">
-      <a href="https://scholar.google.co.in/citations?user=Obwc7esAAAAJ" target="_blank" class="btn-primary" style="display:inline-flex; align-items:center; gap:0.5rem;">
-        View All on Google Scholar →
+      <a class="pub-card" href="https://www.amazon.in/Performance-Parallel-Computing-Satyadhyan-Chickerur/dp/178985623X" target="_blank">
+        <div class="pub-top"><div class="pub-icon">📖</div><div class="pub-type">Edited Book</div></div>
+        <div class="pub-body"><div class="pub-name">Performance Characterization &amp; Benchmarking of Parallel Computing</div><div class="pub-sub">Amazon India</div></div>
+        <div class="pub-foot">View on Amazon →</div>
+      </a>
+      <a class="pub-card" href="https://onlinecourses.nptel.ac.in/noc22_cs83/preview" target="_blank">
+        <div class="pub-top"><div class="pub-icon">🎓</div><div class="pub-type">NPTEL Course</div></div>
+        <div class="pub-body"><div class="pub-name">Applied Accelerated Artificial Intelligence</div><div class="pub-sub">12-week Swayam NPTEL course</div></div>
+        <div class="pub-foot">View Course →</div>
+      </a>
+      <a class="pub-card" href="https://www.intechopen.com/welcome/6a032cbb3e55886bca2481a2752d6c25?edc=y" target="_blank">
+        <div class="pub-top"><div class="pub-icon">📚</div><div class="pub-type">Open Access Book</div></div>
+        <div class="pub-body"><div class="pub-name">Ubiquitous Computing and AI — Bridging the Gap Between Humans and Machines</div><div class="pub-sub">IntechOpen (Editor)</div></div>
+        <div class="pub-foot">View Book →</div>
+      </a>
+      <a class="pub-card" href="https://scholar.google.co.in/citations?user=Obwc7esAAAAJ&hl=en" target="_blank">
+        <div class="pub-top"><div class="pub-icon">📄</div><div class="pub-type">Research Papers</div></div>
+        <div class="pub-body"><div class="pub-name">Peer-reviewed Journal &amp; Conference Publications</div><div class="pub-sub">Scholar · Scopus · Web of Science</div></div>
+        <div class="pub-foot">View on Scholar →</div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ── RECOGNITION ─────────────────────────────────────────────── -->
-<section class="recognition" id="recognition">
-  <div class="container">
-    <div class="section-label">Awards & Recognition</div>
-    <h2 class="section-title">Honours & <em>Distinctions</em></h2>
-    <div class="recog-grid">
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">🏆</div>
-        <h4>Best Scientist Award 2020</h4>
-        <p>Conferred by the ITSR Foundation for outstanding contributions to computing research.</p>
-      </div>
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">🟢</div>
-        <h4>NVIDIA DLI Ambassador</h4>
-        <p>Certified Instructor and Ambassador for the NVIDIA Deep Learning Institute. Master Trainer in GPU Programming.</p>
-      </div>
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">📖</div>
-        <h4>Who's Who Listings</h4>
-        <p>Profiled in <em>Who's Who in the World</em> and <em>Who's Who in Science and Engineering</em> — multiple editions.</p>
-      </div>
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">📄</div>
-        <h4>Most Accessed Article</h4>
-        <p>Recipient from Bentham Science Publishers for seminal reviews on Reconfigurable Computing and Image Restoration.</p>
-      </div>
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">⚛️</div>
-        <h4>IEEE P3120 Member</h4>
-        <p>Active member of the IEEE Standard for Quantum Computing Architecture committee.</p>
-      </div>
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">🎓</div>
-        <h4>SMIEEE</h4>
-        <p>Senior Member of IEEE. Former Execom, IEEE Signal Processing Society, Bangalore Chapter (2007–2009).</p>
-      </div>
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">🌐</div>
-        <h4>General Chair, ICPQC 2026</h4>
-        <p>General Chair for the 2nd International Conference on Physics and Quantum Computing, 2026.</p>
-      </div>
-      <div class="recog-card fade-up">
-        <div class="icon-wrap">🚀</div>
-        <h4>SIH Center Head</h4>
-        <p>Center Head for Smart India Hackathons from 2017 to 2023. Mentored teams at IIT Bombay NSM Hackathons.</p>
-      </div>
+<!-- ══ PROFILES ══ -->
+<section id="profiles">
+  <div class="wrap">
+    <p class="sec-eyebrow">08 · Online Presence</p>
+    <h2 class="sec-title">Find Me Online</h2>
+    <div class="p-grid">
+      <a class="p-card" href="https://scholar.google.co.in/citations?user=Obwc7esAAAAJ&hl=en" target="_blank"><div class="p-avatar">GS</div><div><div class="p-label">Google Scholar</div><div class="p-hint">Citations &amp; h-index</div></div></a>
+      <a class="p-card" href="https://www.scopus.com/authid/detail.uri?authorId=24824178200" target="_blank"><div class="p-avatar">Sc</div><div><div class="p-label">Scopus</div><div class="p-hint">Author ID: 24824178200</div></div></a>
+      <a class="p-card" href="https://www.webofscience.com/wos/author/record/32966" target="_blank"><div class="p-avatar">WS</div><div><div class="p-label">Web of Science</div><div class="p-hint">Researcher Record</div></div></a>
+      <a class="p-card" href="http://linkedin.com/in/chickerursr" target="_blank"><div class="p-avatar">in</div><div><div class="p-label">LinkedIn</div><div class="p-hint">Professional Network</div></div></a>
+      <a class="p-card" href="https://twitter.com/chickerursr" target="_blank"><div class="p-avatar">𝕏</div><div><div class="p-label">Twitter / X</div><div class="p-hint">@chickerursr</div></div></a>
+      <a class="p-card" href="https://techxcelerateinnovations.com" target="_blank"><div class="p-avatar">TX</div><div><div class="p-label">TechXcelerate Innovations</div><div class="p-hint">Startup · AI Products</div></div></a>
+      <a class="p-card" href="https://www.sih.gov.in" target="_blank"><div class="p-avatar">SIH</div><div><div class="p-label">Smart India Hackathon</div><div class="p-hint">Center Head 2017–2023</div></div></a>
     </div>
   </div>
 </section>
 
-<!-- ── CONTACT ─────────────────────────────────────────────────── -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-label">Contact</div>
-    <h2 class="section-title">Let's <em>Connect</em></h2>
-    <div class="contact-inner">
-      <div class="contact-card">
-        <div class="contact-item">
-          <div class="contact-icon">📧</div>
-          <div>
-            <h5>Email</h5>
-            <a href="mailto:chickerursr@ieee.org">chickerursr@ieee.org</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🏛️</div>
-          <div>
-            <h5>Affiliation</h5>
-            <p>School of Computer Science and Engineering<br>KLE Technological University, Hubballi – 580031</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🔬</div>
-          <div>
-            <h5>Research Centre</h5>
-            <p>Centre for Artificial Intelligence Research (CAIR)<br>KLE Technological University</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">🔗</div>
-          <div>
-            <h5>Academic Profiles</h5>
-            <p>
-              <a href="https://scholar.google.co.in/citations?user=Obwc7esAAAAJ" target="_blank" style="color:var(--moss)">Google Scholar</a> ·
-              <a href="https://www.scopus.com/authid/detail.uri?authorId=24824178200" target="_blank" style="color:var(--moss)">Scopus</a> ·
-              <a href="https://linkedin.com/in/chickerursr" target="_blank" style="color:var(--moss)">LinkedIn</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-cta">
-        <h3>Open for <em>Collaborations</em> &amp; Speaking</h3>
-        <p>
-          I welcome research collaborations in AI, HPC, Quantum Computing, and Medical Imaging.
-          Available for keynote talks, faculty development programs, and technical workshops.
-        </p>
-        <a href="mailto:chickerursr@ieee.org" class="btn-primary">Send a Message</a>
-      </div>
-    </div>
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <p class="sec-eyebrow" style="justify-content:center;margin-bottom:10px;">09 · Contact</p>
+  <h2 class="sec-title" style="text-align:center;color:var(--cream);margin-bottom:0;">Get in Touch</h2>
+  <p class="contact-sub" style="margin-top:20px;">For speaking engagements, research collaborations, workshops, or academic inquiries — reach out anytime.</p>
+  <a class="contact-email" href="mailto:chickerursr@ieee.org">✉ chickerursr@ieee.org</a>
+  <div class="contact-links">
+    <a class="c-link" href="http://linkedin.com/in/chickerursr" target="_blank">LinkedIn</a>
+    <a class="c-link" href="https://twitter.com/chickerursr" target="_blank">Twitter / X</a>
+    <a class="c-link" href="https://techxcelerateinnovations.com" target="_blank">🚀 Startup</a>
   </div>
 </section>
-
-<!-- ── FOOTER ──────────────────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="footer-name">Prof. Satyadhyan Chickerur</div>
-    <div class="footer-tagline">Ph.D. · MBA (Edu.Mgmt) · SMIEEE · NVIDIA DLI Ambassador</div>
-    <ul class="footer-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#recognition">Recognition</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="footer-copy">© 2026 Satyadhyan Chickerur · KLE Technological University · Hubballi, Karnataka, India</div>
-  </div>
-</footer>
 
 <script>
-  // Scroll-triggered fade-up
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+/* ── Show placeholder when img src is empty or broken ── */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.photo-frame img, .uk-frame img').forEach(img => {
+    const placeholder = img.nextElementSibling;
+    if (!placeholder) return;
 
-  // Nav scroll effect
-  const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => {
-    nav.style.boxShadow = window.scrollY > 60
-      ? '0 4px 24px rgba(44,74,62,0.1)'
-      : 'none';
+    const showPlaceholder = () => {
+      img.style.display = 'none';
+      placeholder.style.display = 'flex';
+    };
+    const showImage = () => {
+      img.style.display = 'block';
+      placeholder.style.display = 'none';
+    };
+
+    // Check if src is empty or still the template placeholder text
+    const src = img.getAttribute('src') || '';
+    if (!src || src === 'ADD_URL_HERE' || src.trim() === '') {
+      showPlaceholder();
+    } else {
+      // Real URL — show image, fall back to placeholder on error
+      img.onerror = showPlaceholder;
+      img.onload  = showImage;
+      // If already cached/loaded
+      if (img.complete && img.naturalWidth > 0) showImage();
+    }
   });
+});
+
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      en.target.style.animation = 'fadeUp 0.6s ease both';
+      io.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.07 });
+
+document.querySelectorAll(
+  '.photo-card, .uk-card, .t-card, .pub-card, .p-card, .news-row, .s-chip, .aff-row'
+).forEach(el => { el.style.opacity = '0'; io.observe(el); });
 </script>
 </body>
 </html>
